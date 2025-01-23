@@ -2,6 +2,27 @@
   "log": {
     "loglevel": "error"
   },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "domainMatcher": "linear",
+        "domain": ["full:2ip.ru"],
+        "outboundTag": "netherlands"
+      },
+      {
+        "type": "field",
+        "domain": ["geosite:google"],
+        "outboundTag": "netherlands"
+      },
+      {
+        "type": "field",
+        "domain": ["geosite:category-ads-all"],
+        "outboundTag": "block"
+      }
+    ]
+  },
   "inbounds": [
     {
       "port": 443,
@@ -33,7 +54,26 @@
   ],
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    },
+    {
+      "protocol": "shadowsocks",
+      "tag": "netherlands",
+      "settings": {
+        "servers": [
+          {
+            "address": "94.142.158.246",
+            "port": 30072,
+            "method": "chacha20-ietf-poly1305",
+            "password": "OHaQ8wnkC56nFdNBaHv5MD"
+          }
+        ]
+      }
     }
   ]
 }
