@@ -9,7 +9,7 @@
         "type": "field",
         "domainMatcher": "linear",
         "domain": ["full:2ip.ru"],
-        "outboundTag": "netherlands"
+        "outboundTag": "freedom"
       },
       {
         "type": "field",
@@ -54,14 +54,6 @@
   ],
   "outbounds": [
     {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    },
-    {
       "protocol": "shadowsocks",
       "tag": "netherlands",
       "settings": {
@@ -74,6 +66,14 @@
           }
         ]
       }
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
     }
   ]
 }
