@@ -3,7 +3,7 @@
     "loglevel": "error"
   },
   "routing": {
-    "domainStrategy": "AsIs",
+    "domainStrategy": "IPOnDemand",
     "rules": [
       {
         "type": "field",
