@@ -13,19 +13,28 @@
       },
       {
         "type": "field",
+        "inboundTag": "inbound",
         "domainMatcher": "linear",
         "domain": ["full:2ip.ru"],
         "outboundTag": "freedom"
       },
       {
         "type": "field",
+        "inboundTag": "inbound",
         "domain": ["geosite:google"],
         "outboundTag": "netherlands"
       },
       {
         "type": "field",
+        "inboundTag": "inbound",
         "domain": ["geosite:category-ads-all"],
         "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "inboundTag": "inbound",
+        "ip": ["0.0.0.0/0", "::/0"],
+        "outboundTag": "netherlands"
       }
     ]
   },
