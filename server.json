@@ -61,6 +61,10 @@
   ],
   "outbounds": [
     {
+      "protocol": "blackhole",
+      "tag": "block"
+    },
+    {
       "protocol": "shadowsocks",
       "tag": "netherlands",
       "settings": {
@@ -77,10 +81,6 @@
     {
       "protocol": "freedom",
       "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
     }
   ]
 }
